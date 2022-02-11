@@ -1,13 +1,21 @@
 from array import *
 
 nums = array('i', [])
-for i in range(0, 5):
-    num_in = int(input("Enter number: "))
+nums_2 = array('i', [])
+
+for i in range(1, 6):
+    num_in = int(input(f"Enter number '{i}': "))
     nums.append(num_in)
-nums = sorted(nums)
+
+nums = array('i', sorted(nums))
+print(f'Your sorted array - {nums}')
+
+num_del = int(input('Enter delete number: '))
+while num_del not in nums:
+    num_del = int(input('That is not a value in the array, try again: '))
+
+nums.remove(num_del)
+nums_2.append(num_del)
 
 print(nums)
-num_del = int(input('Enter delete number: '))
-nums_2 = nums
-nums_2.remove(num_del)
 print(nums_2)

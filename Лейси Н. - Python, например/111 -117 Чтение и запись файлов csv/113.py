@@ -16,8 +16,11 @@ for i in range(0, in_data):
 file = open('Books.csv', 'r')
 search = input('Enter author: ')
 reader = csv.reader(file)
+count = 0
 for row in file:
     if search in str(row):
         print(row)
+        count += 1
+if count == 0:
+    print('There are no books by this author ')
 
-#   #count
